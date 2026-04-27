@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — Amelia Passer</title>
+<meta name="description" content="About Amelia Passer — painter, astrologer, and tarot reader based in Rollinsville, Colorado. Studio Arts and Religious Studies, CU-Boulder." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<style>
+  .lessons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 720px) { .lessons { grid-template-columns: 1fr; } }
+  .lesson {
+    background: var(--bg-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    padding: 32px;
+  }
+  .lesson__icon {
+    width: 48px; height: 48px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .patreon-card {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(184, 127, 158, 0.06));
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--r-lg);
+    padding: 48px;
+    text-align: center;
+  }
+  @media (max-width: 720px) { .patreon-card { padding: 32px 24px; } }
+</style>
+</head>
+<body>
+
+<div class="starfield" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="../index.html" class="brand">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="14" fill="none" stroke="#d4af37" stroke-width="1.4"/>
+        <path d="M22 32a10 10 0 0 0 14 9 12 12 0 1 1 0-18 10 10 0 0 0-14 9z" fill="#d4af37"/>
+      </svg>
+      <span class="brand__name">Amelia <span>Passer</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="tarot.html">Tarot Deck</a>
+      <a href="readings.html">Readings</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" style="padding: 80px 0 48px; min-height:auto;">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="eyebrow">About</span>
+      <h1>Hi — I'm Amelia.<br/><span class="signature">A painter on the wheel.</span></h1>
+      <p>
+        Originally from Hattiesburg, Mississippi — I've made my home in
+        Colorado since 2012. I graduated from the University of Colorado-Boulder
+        with a degree in Studio Arts and Religious Studies, and I've spent
+        the years since working at the meeting place of the two.
+      </p>
+      <p>
+        My studio is now in Rollinsville, Colorado, where I make
+        talismanic oil paintings — works infused with herbalism,
+        alchemy, ceremonial magic, and electional astrology. When I'm not
+        painting, I'm usually studying one of those.
+      </p>
+      <div class="hero__cta">
+        <a href="../index.html#contact" class="btn btn--primary">Get in Touch</a>
+        <a href="readings.html" class="btn btn--ghost">Book a Reading</a>
+      </div>
+    </div>
+    <div class="hero__visual hero__visual--photo">
+      <img src="../assets/images/about/01.jpg" alt="Amelia Passer in front of one of her paintings" loading="eager" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTIST STATEMENT ============ -->
+<section class="section">
+  <div class="container container--narrow">
+    <div class="section-head reveal">
+      <span class="eyebrow">Artist Statement</span>
+      <h2>Ora et Labora.</h2>
+    </div>
+
+    <div class="reveal">
+      <blockquote class="hero__quote" style="margin-top: 0; padding-top: 0; border-top: 0; font-size: 1.2rem;">
+        “…in order to make translucid the most obscure technical secrets, [it]
+        would seem to require the art of magic in addition to the practice of
+        painting itself.”
+        <cite>— Salvador Dalí</cite>
+      </blockquote>
+
+      <p>
+        Through my work, I embark on a journey that explores merging the realms
+        of the magical arts with the traditional medium of oil painting. As in
+        the Latin phrase <em>Ora et Labora</em> — "Work and Pray" — I approach
+        my creative process as a sacred endeavor, infusing intentionality into
+        each brush stroke.
+      </p>
+      <p>
+        My studio serves as a sanctuary, a sacred space where the fusion of
+        art and magic harmoniously unfolds. It is within this environment
+        that my paintings come to life, embodying the convergence of the
+        physical and the spiritual.
+      </p>
+      <p>
+        My creative practice is deeply influenced by the realms of magic and
+        astrology, which I incorporate into my painting rituals. By harnessing
+        these mystical practices and the use of electional astrology, I create
+        artistic talismans that carry potent symbolic meanings. Each piece is
+        infused with a profound sense of purpose and devotion.
+      </p>
+      <p>
+        By embracing the fusion of esoteric arts and traditional oil painting,
+        my work seeks to ignite a sense of wonder, evoking a connection to the
+        hidden realms that lie within us all.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTIST BIO ============ -->
+<section class="section">
+  <div class="container">
+    <div class="feature feature--reverse">
+      <div class="feature__media reveal">
+        <img src="../assets/images/about/02.jpg" alt="Amelia Passer — additional studio portrait" loading="lazy" />
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Bio</span>
+        <h2>The longer story.</h2>
+        <p>
+          I grew up in Hattiesburg, Mississippi and moved to the Boulder,
+          Colorado area in 2012 for school. I graduated from
+          CU-Boulder with a double degree in Studio Arts and Religious
+          Studies — and that double-major has been the spine of everything
+          I've done since.
+        </p>
+        <p>
+          I now live and work in Rollinsville, Colorado. When I'm not making
+          art, I spend most of my time studying and delving into other
+          interests — herbalism, alchemy, spirituality, astrology, and the
+          occult sciences. Combining all of these, I describe my work as
+          <em class="gold">narrative art</em> — aiming to tell a story
+          through each painting.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PATREON ============ -->
+<section class="section">
+  <div class="container container--narrow">
+    <div class="patreon-card reveal">
+      <span class="eyebrow">Join me on Patreon</span>
+      <h2 style="margin-top: 12px;">Become part of the studio.</h2>
+      <p class="lede" style="margin: 0 auto 28px;">
+        Patrons get immediate access to all my work-in-progress content and
+        exclusive entry into my process. If you're an admirer, or someone
+        wanting to dive deeper into your own art practice, this is for you.
+      </p>
+      <p style="max-width: 56ch; margin: 0 auto 32px; color: var(--ink-2);">
+        I'm building a community of artists, visionaries, seekers, and
+        mystics who want to find a connection between the art and the
+        mystical. <em class="gold">Art is magic, and magic is art.</em>
+      </p>
+      <a href="https://patreon.com/ameliapasser" target="_blank" rel="noopener" class="btn btn--primary">Visit Patreon <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LESSONS / SERVICES ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Available For</span>
+      <h2>Lessons, live painting, and commissions.</h2>
+      <p class="muted">I'm available for private and group art lessons in the Front Range area, live painting at events, and a small number of commissions each year.</p>
+    </div>
+
+    <div class="lessons">
+      <div class="lesson reveal">
+        <div class="lesson__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+        </div>
+        <h3>Private Lessons</h3>
+        <p class="muted" style="font-size:0.95rem;">
+          One-on-one in studio or at your space — Front Range, Colorado.
+          Beginners welcome; we work from where you are.
+        </p>
+      </div>
+      <div class="lesson reveal">
+        <div class="lesson__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 7c2 0 4 2 4 4s-2 4-4 4-4-2-4-4 2-4 4-4z"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+        </div>
+        <h3>Group Lessons</h3>
+        <p class="muted" style="font-size:0.95rem;">
+          Themed sessions for small groups — beginner exercises through
+          intuitive painting and planetary color study.
+        </p>
+      </div>
+      <div class="lesson reveal">
+        <div class="lesson__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg>
+        </div>
+        <h3>Live Event Painting</h3>
+        <p class="muted" style="font-size:0.95rem;">
+          Weddings, festivals, gatherings. I set up an easel, paint the
+          night as it unfolds, and you keep the canvas. Front Range, Colorado.
+        </p>
+      </div>
+      <div class="lesson reveal">
+        <div class="lesson__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+        </div>
+        <h3>Commissions</h3>
+        <p class="muted" style="font-size:0.95rem;">
+          A small number per year. Portraits, planetary pieces, custom
+          tarot art. We start with a conversation about what you want the
+          work to do.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section">
+  <div class="container container--narrow text-center">
+    <span class="eyebrow reveal">Get in touch</span>
+    <h2 class="reveal">Let's connect.</h2>
+    <p class="lede reveal">
+      Painting? Reading? Lessons? Live event? I'd love to hear about it.
+    </p>
+    <div class="divider reveal" aria-hidden="true">✦</div>
+    <a href="../index.html#contact" class="btn btn--primary reveal">Send a Message <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__inner">
+      <div>
+        <a href="../index.html" class="brand">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="14" fill="none" stroke="#d4af37" stroke-width="1.4"/>
+            <path d="M22 32a10 10 0 0 0 14 9 12 12 0 1 1 0-18 10 10 0 0 0-14 9z" fill="#d4af37"/>
+          </svg>
+          <span class="brand__name">Amelia <span>Passer</span></span>
+        </a>
+        <p class="muted" style="font-size:0.9rem; max-width:38ch; margin-top:12px;">
+          Talismanic oil paintings, the Astro Magician's Tarot, and personal readings. Studio in Rollinsville, Colorado.
+        </p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="tarot.html">The Astro Magician's Tarot</a></li>
+          <li><a href="readings.html">Readings</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:ameliapasser@gmail.com">ameliapasser@gmail.com</a></li>
+          <li class="muted" style="font-size:0.85rem;">PO Box #430</li>
+          <li class="muted" style="font-size:0.85rem;">Rollinsville, CO 80474</li>
+        </ul>
+        <div class="socials" style="margin-top:18px;">
+          <a href="https://www.instagram.com/ameliapasser" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.facebook.com/ameliapasser" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8h2V5h-2.5C11.5 5 10 6.5 10 8.5V11H8v3h2v6h3v-6h2.2l.3-3H13V9c0-.6.4-1 1-1z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span id="year"></span> Amelia Passer. All work and likeness reserved.</span>
+      <span>Made with intention.</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../assets/script.js"></script>
+</body>
+</html>

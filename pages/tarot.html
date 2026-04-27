@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Astro Magician's Tarot — Amelia Passer</title>
+<meta name="description" content="A 78-card hand-painted tarot deck rooted in astrology — major arcana keyed to planetary archetypes, minors keyed to the decans of the wheel." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<style>
+  .deck-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+  }
+  .tarot-large {
+    aspect-ratio: 2 / 3;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.6), 0 0 0 1px var(--hairline-strong) inset;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+  }
+  .tarot-large:hover {
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.7), 0 0 30px rgba(212, 175, 55, 0.2);
+  }
+  .tarot-large svg { width: 100%; height: 100%; display: block; }
+  .deck-name {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    text-align: center;
+    margin-top: 12px;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  @media (max-width: 720px) { .stats { grid-template-columns: 1fr; } }
+  .stat__num {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat__label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="starfield" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="../index.html" class="brand">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="14" fill="none" stroke="#d4af37" stroke-width="1.4"/>
+        <path d="M22 32a10 10 0 0 0 14 9 12 12 0 1 1 0-18 10 10 0 0 0-14 9z" fill="#d4af37"/>
+      </svg>
+      <span class="brand__name">Amelia <span>Passer</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="tarot.html">Tarot Deck</a>
+      <a href="readings.html">Readings</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" style="min-height:auto; padding: 80px 0 48px;">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="eyebrow">The Astro Magician's Tarot</span>
+      <h1>A deck where every card<br/><span class="signature">finds its hour.</span></h1>
+      <p class="hero__lede">
+        Seventy-eight hand-painted cards built on the wheel — twenty-two majors
+        for the planetary and zodiacal archetypes, fifty-six minors keyed to
+        the decans. Read it as a story, lay it as a chart.
+      </p>
+      <div class="hero__cta">
+        <a href="shop.html" class="btn btn--primary">Order the Deck <span class="arrow">→</span></a>
+        <a href="readings.html" class="btn btn--ghost">Get a Reading</a>
+      </div>
+    </div>
+    <div class="hero__visual hero__visual--photo">
+      <img src="../assets/images/shop/tarot-deck.jpg" alt="The Astro Magician's Tarot — limited edition deck showing The Fool and The Magician" loading="eager" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="section" style="padding: 48px 0;">
+  <div class="container">
+    <div class="stats">
+      <div>
+        <div class="stat__num">78</div>
+        <div class="stat__label">Hand-painted cards</div>
+      </div>
+      <div>
+        <div class="stat__num">36</div>
+        <div class="stat__label">Decans · one per minor</div>
+      </div>
+      <div>
+        <div class="stat__num">22</div>
+        <div class="stat__label">Major archetypes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section class="section">
+  <div class="container">
+    <div class="feature">
+      <div class="feature__media reveal" aria-hidden="true">
+        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="phil-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1530"/><stop offset="100%" stop-color="#0a0814"/></linearGradient>
+            <radialGradient id="phil-ring" cx="50%" cy="50%"><stop offset="0%" stop-color="#d4af37" stop-opacity="0.3"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+          </defs>
+          <rect width="400" height="500" fill="url(#phil-bg)"/>
+          <circle cx="200" cy="250" r="180" fill="url(#phil-ring)"/>
+          <!-- Zodiac wheel -->
+          <g transform="translate(200 250)" stroke="#d4af37" stroke-width="1" fill="none">
+            <circle r="160"/>
+            <circle r="120"/>
+            <circle r="80"/>
+            <!-- 12 spokes -->
+            <g stroke-opacity="0.5">
+              <line x1="0" y1="-160" x2="0" y2="160"/>
+              <line x1="-160" y1="0" x2="160" y2="0"/>
+              <line x1="-138" y1="-80" x2="138" y2="80"/>
+              <line x1="138" y1="-80" x2="-138" y2="80"/>
+              <line x1="-80" y1="-138" x2="80" y2="138"/>
+              <line x1="80" y1="-138" x2="-80" y2="138"/>
+            </g>
+          </g>
+          <!-- Zodiac glyphs (simplified) -->
+          <g fill="#d4af37" font-family="Cormorant Garamond" font-size="20" text-anchor="middle">
+            <text x="200" y="80">♈</text>
+            <text x="320" y="180">♉</text>
+            <text x="320" y="320">♊</text>
+            <text x="200" y="430">♋</text>
+            <text x="80" y="320">♌</text>
+            <text x="80" y="180">♍</text>
+          </g>
+          <g fill="#e8c870" font-family="Cormorant Garamond" font-size="14" text-anchor="middle" opacity="0.7">
+            <text x="200" y="160">♎</text>
+            <text x="260" y="220">♏</text>
+            <text x="260" y="290">♐</text>
+            <text x="200" y="350">♑</text>
+            <text x="140" y="290">♒</text>
+            <text x="140" y="220">♓</text>
+          </g>
+        </svg>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Why this deck</span>
+        <h2>Tarot built on the wheel.</h2>
+        <p class="lede">
+          Most tarot decks treat astrology as a footnote. This one starts there.
+        </p>
+        <p>
+          Every card has an astrological assignment that earned its place —
+          The Magician is Mercury; The Empress is Venus; the Two of Wands
+          opens the first decan of Aries. When you lay a spread, you're laying
+          a chart. When you read your chart, you can lay it.
+        </p>
+        <p>
+          The art is hand-painted, then printed on heavy linen-finish stock.
+          The deck ships with a guidebook keying every card to its decan,
+          dignity, and traditional rulership.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DECK PREVIEW ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">A look inside</span>
+      <h2>Selected major arcana</h2>
+      <p class="muted">Six of the twenty-two majors. Each is rooted in a planet or luminary.</p>
+    </div>
+
+    <div class="deck-grid">
+
+      <div class="reveal">
+        <div class="tarot-large">
+          <svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="d-fool-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5a8da8"/><stop offset="100%" stop-color="#1c3848"/></linearGradient></defs>
+            <rect width="200" height="300" fill="url(#d-fool-bg)"/>
+            <rect x="6" y="6" width="188" height="288" fill="none" stroke="#d4af37" stroke-width="1"/>
+            <!-- Cliff -->
+            <path d="M0 240 L 80 220 L 100 260 L 200 250 L 200 300 L 0 300 Z" fill="#1c3848"/>
+            <!-- Sun -->
+            <circle cx="160" cy="80" r="22" fill="#f4c95d"/>
+            <!-- Figure -->
+            <circle cx="100" cy="180" r="14" fill="#f5efe0"/>
+            <path d="M86 190 L 80 240 L 120 240 L 114 190 Z" fill="#d4af37"/>
+            <text x="100" y="40" text-anchor="middle" fill="#d4af37" font-family="JetBrains Mono" font-size="9" letter-spacing="2">0</text>
+            <text x="100" y="280" text-anchor="middle" fill="#d4af37" font-family="Cormorant Garamond" font-size="13" font-style="italic">The Fool</text>
+          </svg>
+        </div>
+        <p class="deck-name">0 · Uranus</p>
+      </div>
+
+      <div class="reveal">
+        <div class="tarot-large">
+          <svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="d-mag-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3a2a55"/><stop offset="100%" stop-color="#0d0918"/></linearGradient></defs>
+            <rect width="200" height="300" fill="url(#d-mag-bg)"/>
+            <rect x="6" y="6" width="188" height="288" fill="none" stroke="#d4af37" stroke-width="1"/>
+            <circle cx="100" cy="120" r="42" fill="#d4af37" opacity="0.85"/>
+            <path d="M100 60 v 180 M40 150 h 120" stroke="#f5efe0" stroke-width="1.5" opacity="0.7"/>
+            <path d="M100 80 c -14 0 -22 12 -22 24 c 0 10 8 16 14 18 c -6 4 -16 18 -16 32 l 48 0 c 0 -14 -10 -28 -16 -32 c 6 -2 14 -8 14 -18 c 0 -12 -8 -24 -22 -24 z" fill="#0a0814"/>
+            <text x="100" y="40" text-anchor="middle" fill="#d4af37" font-family="JetBrains Mono" font-size="9" letter-spacing="2">I</text>
+            <text x="100" y="270" text-anchor="middle" fill="#d4af37" font-family="Cormorant Garamond" font-size="13" font-style="italic">The Magician</text>
+          </svg>
+        </div>
+        <p class="deck-name">I · Mercury</p>
+      </div>
+
+      <div class="reveal">
+        <div class="tarot-large">
+          <svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="d-emp-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5a2a3d"/><stop offset="100%" stop-color="#1a0c14"/></linearGradient></defs>
+            <rect width="200" height="300" fill="url(#d-emp-bg)"/>
+            <rect x="6" y="6" width="188" height="288" fill="none" stroke="#d4af37" stroke-width="1"/>
+            <circle cx="100" cy="130" r="36" fill="#e8a87c"/>
+            <path d="M70 130 c 0 30 14 50 30 60 c 16 -10 30 -30 30 -60" fill="#b87f9e" opacity="0.6"/>
+            <!-- Crown of stars -->
+            <g fill="#d4af37">
+              <path d="M76 90 l 2 -8 l 2 8 l 8 1 l -8 1 z"/>
+              <path d="M100 80 l 2 -8 l 2 8 l 8 1 l -8 1 z"/>
+              <path d="M120 90 l 2 -8 l 2 8 l 8 1 l -8 1 z"/>
+            </g>
+            <text x="100" y="40" text-anchor="middle" fill="#d4af37" font-family="JetBrains Mono" font-size="9" letter-spacing="2">III</text>
+            <text x="100" y="270" text-anchor="middle" fill="#d4af37" font-family="Cormorant Garamond" font-size="13" font-style="italic">The Empress</text>
+          </svg>
+        </div>
+        <p class="deck-name">III · Venus</p>
+      </div>
+
+      <div class="reveal">
+        <div class="tarot-large">
+          <svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="d-wheel-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2a3050"/><stop offset="100%" stop-color="#0a0c1c"/></linearGradient></defs>
+            <rect width="200" height="300" fill="url(#d-wheel-bg)"/>
+            <rect x="6" y="6" width="188" height="288" fill="none" stroke="#d4af37" stroke-width="1"/>
+            <g transform="translate(100 150)" stroke="#d4af37" fill="none">
+              <circle r="56"/>
+              <circle r="40"/>
+              <circle r="20" fill="#d4af37" stroke="none" opacity="0.6"/>
+              <line x1="0" y1="-56" x2="0" y2="56"/>
+              <line x1="-56" y1="0" x2="56" y2="0"/>
+              <line x1="-40" y1="-40" x2="40" y2="40"/>
+              <line x1="40" y1="-40" x2="-40" y2="40"/>
+            </g>
+            <text x="100" y="40" text-anchor="middle" fill="#d4af37" font-family="JetBrains Mono" font-size="9" letter-spacing="2">X</text>
+            <text x="100" y="270" text-anchor="middle" fill="#d4af37" font-family="Cormorant Garamond" font-size="13" font-style="italic">The Wheel</text>
+          </svg>
+        </div>
+        <p class="deck-name">X · Jupiter</p>
+      </div>
+
+      <div class="reveal">
+        <div class="tarot-large">
+          <svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="d-tower-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3a0c0c"/><stop offset="100%" stop-color="#0c0404"/></linearGradient></defs>
+            <rect width="200" height="300" fill="url(#d-tower-bg)"/>
+            <rect x="6" y="6" width="188" height="288" fill="none" stroke="#d4af37" stroke-width="1"/>
+            <!-- Tower -->
+            <rect x="80" y="100" width="40" height="120" fill="#7c5034"/>
+            <path d="M80 100 L 100 70 L 120 100 Z" fill="#3a1c10"/>
+            <!-- Lightning bolt -->
+            <path d="M120 60 L 90 110 L 110 110 L 80 160" stroke="#f4c95d" stroke-width="3" fill="none" stroke-linejoin="miter"/>
+            <!-- Falling figures -->
+            <circle cx="60" cy="180" r="6" fill="#f5efe0"/>
+            <circle cx="140" cy="200" r="6" fill="#f5efe0"/>
+            <text x="100" y="40" text-anchor="middle" fill="#d4af37" font-family="JetBrains Mono" font-size="9" letter-spacing="2">XVI</text>
+            <text x="100" y="270" text-anchor="middle" fill="#d4af37" font-family="Cormorant Garamond" font-size="13" font-style="italic">The Tower</text>
+          </svg>
+        </div>
+        <p class="deck-name">XVI · Mars</p>
+      </div>
+
+      <div class="reveal">
+        <div class="tarot-large">
+          <svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="d-sun-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5a3818"/><stop offset="100%" stop-color="#1a0f08"/></linearGradient>
+              <radialGradient id="d-sun-s" cx="50%" cy="50%"><stop offset="0%" stop-color="#fff2c8"/><stop offset="100%" stop-color="#a86b1f"/></radialGradient>
+            </defs>
+            <rect width="200" height="300" fill="url(#d-sun-bg)"/>
+            <rect x="6" y="6" width="188" height="288" fill="none" stroke="#d4af37" stroke-width="1"/>
+            <circle cx="100" cy="130" r="42" fill="url(#d-sun-s)"/>
+            <g stroke="#f4c95d" stroke-width="1.5" stroke-linecap="round">
+              <line x1="100" y1="60" x2="100" y2="80"/>
+              <line x1="100" y1="180" x2="100" y2="200"/>
+              <line x1="30" y1="130" x2="50" y2="130"/>
+              <line x1="150" y1="130" x2="170" y2="130"/>
+              <line x1="50" y1="80" x2="65" y2="95"/>
+              <line x1="150" y1="80" x2="135" y2="95"/>
+              <line x1="50" y1="180" x2="65" y2="165"/>
+              <line x1="150" y1="180" x2="135" y2="165"/>
+            </g>
+            <text x="100" y="40" text-anchor="middle" fill="#d4af37" font-family="JetBrains Mono" font-size="9" letter-spacing="2">XIX</text>
+            <text x="100" y="270" text-anchor="middle" fill="#d4af37" font-family="Cormorant Garamond" font-size="13" font-style="italic">The Sun</text>
+          </svg>
+        </div>
+        <p class="deck-name">XIX · Sun</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORDER ============ -->
+<section class="section">
+  <div class="container container--narrow text-center">
+    <span class="eyebrow reveal">Get the Deck</span>
+    <h2 class="reveal">First edition — limited run.</h2>
+    <p class="lede reveal">
+      Each first-edition deck is signed and numbered, comes in a custom box,
+      and ships with the printed guidebook. Reserve a copy from the shop or
+      reach out for wholesale inquiries.
+    </p>
+    <div class="divider reveal" aria-hidden="true">✦</div>
+    <div class="hero__cta reveal" style="justify-content:center;">
+      <a href="shop.html" class="btn btn--primary">Order from the Shop <span class="arrow">→</span></a>
+      <a href="../index.html#contact" class="btn btn--ghost">Wholesale Inquiry</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__inner">
+      <div>
+        <a href="../index.html" class="brand">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="14" fill="none" stroke="#d4af37" stroke-width="1.4"/>
+            <path d="M22 32a10 10 0 0 0 14 9 12 12 0 1 1 0-18 10 10 0 0 0-14 9z" fill="#d4af37"/>
+          </svg>
+          <span class="brand__name">Amelia <span>Passer</span></span>
+        </a>
+        <p class="muted" style="font-size:0.9rem; max-width:38ch; margin-top:12px;">
+          Painter, astrologer, and tarot reader based in the Front Range of Colorado.
+        </p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="tarot.html">The Astro Magician's Tarot</a></li>
+          <li><a href="readings.html">Readings</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:ameliapasser@gmail.com">ameliapasser@gmail.com</a></li>
+          <li class="muted" style="font-size:0.85rem;">PO Box #430</li>
+          <li class="muted" style="font-size:0.85rem;">Rollinsville, CO 80474</li>
+        </ul>
+        <div class="socials" style="margin-top:18px;">
+          <a href="https://www.instagram.com/ameliapasser" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.facebook.com/ameliapasser" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8h2V5h-2.5C11.5 5 10 6.5 10 8.5V11H8v3h2v6h3v-6h2.2l.3-3H13V9c0-.6.4-1 1-1z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span id="year"></span> Amelia Passer. All work and likeness reserved.</span>
+      <span>Made with intention.</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+{
+  "site": {
+    "name": "Amelia Passer",
+    "tagline": "Painter, Astrologer, Tarot Reader",
+    "location": "Rollinsville, Colorado",
+    "po_box": "PO Box #430, Rollinsville, Colorado 80474",
+    "email": "ameliapasser@gmail.com",
+    "patreon": "https://patreon.com/ameliapasser",
+    "instagram": "https://www.instagram.com/ameliapasser",
+    "facebook": "https://www.facebook.com/ameliapasser"
+  },
+  "bio": {
+    "origin": "Hattiesburg, Mississippi",
+    "since_co": "2012",
+    "education": "University of Colorado-Boulder, Studio Arts and Religious Studies",
+    "current": "Rollinsville, Colorado",
+    "interests": ["herbalism", "alchemy", "spirituality", "astrology", "occult sciences"],
+    "voice": "narrative art- aiming to tell a story through my paintings"
+  },
+  "artist_statement": "Through my work, I embark on a journey that explores merging the realms of the magical arts with the traditional medium of oil painting. As in the Latin phrase, \"Ora et Labora,\" meaning \"Work and Pray,\" I approach my creative process as a sacred endeavor, infusing intentionality into each brush stroke. My studio serves as a sanctuary, a sacred space where the fusion of art and magic harmoniously unfolds. It is within this environment that my paintings come to life, embodying the convergence of the physical and the spiritual. My creative practice is deeply influenced by the realms of Magic and Astrology, which I incorporate into my painting rituals. By harnessing these mystical practices and the use of electional astrology, I create artistic talismans that carry potent symbolic meanings. Each piece I create is infused with a profound sense of purpose and devotion. By embracing the fusion of esoteric arts and traditional oil painting, my work seeks to ignite a sense of wonder, evoking a connection to the hidden realms that lie within us all.",
+  "epigraph": {
+    "quote": "...in order to make translucid the most obscure technical secrets, [it] would seem to require the art of magic in addition to the practice of painting itself..",
+    "author": "Salvador Dalí"
+  },
+  "seven_basics": {
+    "title": "The Seven Basics",
+    "subtitle": "Talismanic Painting Series",
+    "years": "2021–2023",
+    "intro": "In this series, I delve into the realm of talismanic arts, employing traditional oil painting techniques infused with herbal alchemy, ceremonial magic, and electional astrology. These paintings are intended as transformative magical objects, resonating with the energy of the specific ruling planet. My inspiration stems from Paracelsus' seven basics of making a spagyric preparation, which I adapted to the realm of paintings. Each piece was intentionally commenced during a specific astrological election, and only worked on on the planetary day associated with its ruling planet. Before each session, I would align with the energies of the planet using ceremonial magic invocations, and then while burning the appropriate incense associated with that planet, I would sing the Orphic Hymn.",
+    "items": [
+      {
+        "name": "The Moon",
+        "size": "48\" × 30\"",
+        "media": "Oils, casein, silver leaf",
+        "wix_id": "9f69be_2950b1d388d2459ea0ebe0595dabded0~mv2.jpg",
+        "filename": "01-moon.jpg",
+        "description": "Commenced July 2021 when the moon resided in Taurus, forming a harmonious sextile with the sun in Cancer. To honor the moon's cyclic nature, I embraced the technique known as mischtechnik. During the waxing phase, as the moon grew brighter or full, I applied casein to capture its luminosity and gentle radiance. As the moon waned or new, transitioning towards darkness, I employed dark hues to evoke contrasting shadows and captivating depths. To finish, I adorned the composition with silver leaf, the metal closely tied to lunar symbolism, casting shimmering reflections."
+      },
+      {
+        "name": "Mercury",
+        "size": "48\" × 30\"",
+        "media": "Oils on canvas",
+        "wix_id": "9f69be_68286bd5a09549668656a95516bd90a4~mv2.png",
+        "filename": "02-mercury.png",
+        "description": "Mercury is known for its association with air and its role in traditional alchemy. Commencing its creation when Mercury was conjunct the ascendant in Gemini and only working on Wednesdays, the painting carries the essence of this celestial alignment, infusing it with a sense of cosmic synergy. The creative process of this artwork was uniquely confined to Wednesdays, paying homage to Mercury's planetary influence. The essence of Mercury explores the interconnectedness between the celestial and terrestrial realms, contemplating the role as a bridge between different realms of existence."
+      },
+      {
+        "name": "Venus",
+        "size": "48\" × 30\"",
+        "media": "Oils on canvas, copper leaf",
+        "wix_id": "9f69be_70fb46b43df44c269fa5a8ac73607c61~mv2.jpg",
+        "filename": "03-venus.jpg",
+        "description": "Venus is the planet of love, harmony, and beauty. Green, the color closely associated with Venus, dominates the canvas, emanating the vibrant energy and lushness that the planet embodies. I commenced this artwork during Venus's rulership in Taurus. I used malachite pigment as it is green in color and composed of copper sulfide. Copper being the metal associated with Venus, I sealed the piece with copper leaf during the Venus/Moon conjunction in Taurus. As a Venusian-ruled Sun, I am drawn to the symbolism that Venus embodies."
+      },
+      {
+        "name": "Sun",
+        "size": "48\" × 30\"",
+        "media": "Oils on canvas, gold leaf",
+        "wix_id": "9f69be_e177c42485bf495bb7801d793d63d446~mv2.jpg",
+        "filename": "04-sun.jpg",
+        "description": "The Sun painting commenced on August 8th, a significant date known as the Lions Gate Portal, when cosmic energies align to awaken inner potential and spiritual growth, and from there worked on Sundays. Yellow, the color closely associated with the Sun, envelops the canvas, radiating warmth, vitality, and joy. And as the Sun is associated with the precious metal gold, I incorporated touches of gilded elements into the artwork. The luminous allure of gold leaf embellishes the composition, evoking the Sun's brilliance and symbolizing its inherent value and significance."
+      },
+      {
+        "name": "Mars",
+        "size": "48\" × 30\"",
+        "media": "Oils on canvas",
+        "wix_id": "9f69be_b95dfd3248b64ba894fd807bababdafe~mv2.png",
+        "filename": "05-mars.png",
+        "description": "Guided by the fiery energy of Mars, the planet of passion and strength. The dominant color palette of bold red ignites the canvas, reflecting the dynamic and assertive nature of Mars. The creative process commenced during Mars's residency in Scorpio in November 2021. In a tribute to Mars's association with iron, the metal symbolic of its raw power, I incorporated iron oxide pigment sourced from rocks found in the majestic Rocky Mountains. From there, the palette was cadmium reds, and Mars black. Aligned with the planetary energy, the creative process unfolded exclusively on Tuesdays, the day traditionally associated with Mars."
+      },
+      {
+        "name": "Jupiter",
+        "size": "48\" × 30\"",
+        "media": "Oils on canvas",
+        "wix_id": "9f69be_ee9aa062f68e48ff8bf544525d446f88~mv2.png",
+        "filename": "06-jupiter.png",
+        "description": "Jupiter is the planet of expansion, abundance, and wisdom. This piece serves as a celestial tapestry, adorned with hues of blue and occasional touches of yellow, reflecting the essence of Jupiter's cosmic influence. The creative process began when Jupiter first entered Pisces in 2021, marking a period of enhanced spiritual insight and expansive energy. Renowned for its vibrant blue hue, lapis lazuli has long been associated with Jupiter and serves as a fitting representation of its influence, which I infused into the painting. In reverence to Jupiter's association with Thursdays, the creative process was dedicated exclusively to this day of the week."
+      },
+      {
+        "name": "Saturn",
+        "size": "48\" × 30\"",
+        "media": "Oils on canvas",
+        "wix_id": "9f69be_712c431de2704ec88db856b0e5958580~mv2.jpg",
+        "filename": "07-saturn.jpg",
+        "description": "Saturn is the celestial embodiment of structure, discipline, and wisdom. The creative process unfolded primarily during Saturn's residency in Aquarius, a period when the planet's energy intersected with the innovative and intellectual realm of fixed air. To embody the darkness and gravitas of Saturn, I exclusively utilized bone black, a pigment created from charred animal bones. The incorporation of lead white adds subtle nuances and highlights, contrasting the darkness with moments of illumination. In alignment with Saturn's association with Saturdays, the painting process was dedicated exclusively to this day of the week."
+      }
+    ]
+  },
+  "shop": [
+    { "name": "Limited Edition Astro Magician's Tarot deck", "price": "$55.00", "in_stock": true, "wix_id": "9f69be_0bd0ed97464a481585485ebf42df5d3f~mv2.png", "filename": "tarot-deck.png", "category": "deck" },
+    { "name": "The Rubedo original painting", "price": null, "in_stock": false, "wix_id": "9f69be_a9ba6440ab2740959baf036a81ae3a0b~mv2.png", "filename": "the-rubedo.png", "category": "original" },
+    { "name": "Oshun Original painting", "price": null, "in_stock": false, "wix_id": "9f69be_ef9ca719f4d74df886f8e4461a89b5ed~mv2.png", "filename": "oshun.png", "category": "original" },
+    { "name": "Durga Ma in Leo original painting", "price": "$5,600.00", "in_stock": true, "wix_id": "9f69be_8c9259255b354b76bb6453ee3436b582~mv2.png", "filename": "durga-ma-in-leo.png", "category": "original" },
+    { "name": "Dreams of the Jewel original painting", "price": "$7,000.00", "in_stock": true, "wix_id": "9f69be_e791bf897ca540fda65518baafde6d5b~mv2.png", "filename": "dreams-of-the-jewel.png", "category": "original" },
+    { "name": "Birth of Venus Original painting", "price": "$7,000.00", "in_stock": true, "wix_id": "9f69be_e750bdd7b0bc450482b729c2fad3a219~mv2.png", "filename": "birth-of-venus.png", "category": "original" },
+    { "name": "Lady's Mantle original painting", "price": "$3,500.00", "in_stock": true, "wix_id": "9f69be_752508008e974116b509475f2d65932b~mv2.png", "filename": "ladys-mantle.png", "category": "original" },
+    { "name": "The Protectress Original painting", "price": "$600.00", "in_stock": true, "wix_id": "9f69be_9d0412e2566c496fb9c409ab498c4cec~mv2.png", "filename": "the-protectress.png", "category": "original" },
+    { "name": "Temple of the Heart original painting", "price": null, "in_stock": false, "wix_id": "9f69be_e0a04801e20649cbb863f10a09dd216f~mv2.png", "filename": "temple-of-the-heart.png", "category": "original" },
+    { "name": "Prima Materia original painting", "price": null, "in_stock": false, "wix_id": "9f69be_a19a7f47c91047a59301016b06107aee~mv2.jpg", "filename": "prima-materia.jpg", "category": "original" },
+    { "name": "Hemlock original drawing", "price": "$150.00", "in_stock": true, "wix_id": "9f69be_08ff021ab3024ce7898c73dbbc59fc7c~mv2.png", "filename": "hemlock.png", "category": "drawing" },
+    { "name": "Osha original drawing", "price": null, "in_stock": false, "wix_id": "9f69be_fe6efd9c302d478db94297ad9207bc1a~mv2.png", "filename": "osha.png", "category": "drawing" }
+  ],
+  "gallery": [
+    "9f69be_047d4882418e4901bae87c6633436796~mv2.jpg",
+    "9f69be_f83965d18cf84d6cba31fe87c48aa228~mv2.png",
+    "9f69be_55f52a6e71944ec798bc9a2fa73f7421~mv2.jpg",
+    "9f69be_7ff169f476054d849e20664e46fc881b~mv2.jpg",
+    "9f69be_20fc2a7375e44488902a684dac49b14f~mv2.jpg",
+    "9f69be_54e964d1d5ee4968bdecfa9643f66446~mv2.jpg",
+    "9f69be_53e107dd94fb40faa3f6a10378c77339~mv2.jpg",
+    "9f69be_619987c9f71d4792bcd2cbca1cc50c2e~mv2.jpg",
+    "9f69be_1d68bfcc8fb04f85b515846a06462647~mv2.png",
+    "9f69be_34d42cd4b258424f9a52f11d6b9c8491~mv2.jpg",
+    "9f69be_3d7cdc3b74ad48f3adde76c2991daf9b~mv2.jpg",
+    "9f69be_bffddc8561a742bbacbe571ae22ab560~mv2.jpg",
+    "9f69be_76e9bd357dac4b3c9b4a4b278712debf~mv2.jpeg",
+    "9f69be_6c78347f1fe748ada0d98ca349506f95~mv2.jpeg",
+    "9f69be_73d7f0f7af5e471ea80107fe1bd655a2~mv2.jpg",
+    "9f69be_7ab8279012fd43d5aa3a7bc18a68b67c~mv2.jpg",
+    "9f69be_c541fab8899d4872a2b680f08d6b58ee~mv2.jpg",
+    "9f69be_73ba52b2e68244b88e04ccc9d6371eae~mv2_d_4749_3567_s_4_2.jpg",
+    "9f69be_d3ace43712694cfeb25927a29b2127b4~mv2.jpg",
+    "9f69be_f562abb93f6144bf985592ea65e71574~mv2.jpeg",
+    "9f69be_877c397cfbaf4b72904525f7bab352eb~mv2.jpeg",
+    "9f69be_ebf60c542b2e4bc6a94373cac333e39c~mv2.jpeg",
+    "9f69be_d7ea199ff62b44c89c2c8aee781e0853~mv2.jpg",
+    "9f69be_f0fee57c516c4839ac01b53236bb78ac~mv2.jpeg",
+    "9f69be_9057f783ffc8423fba473a34dd91c8f2~mv2.jpg"
+  ],
+  "about_imgs": [
+    "9f69be_33845f15c7f740a6baf27b2dcc85f743~mv2.jpg",
+    "9f69be_75f687d388a34294b36d91ababcdec7f~mv2.jpg"
+  ]
+}
