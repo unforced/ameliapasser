@@ -4,12 +4,107 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Astrology &amp; Tarot Readings — Amelia Passer</title>
-<meta name="description" content="Personal astrology and tarot readings with Amelia Passer — natal chart consultations, transit work, and tarot sessions, in person or by video." />
+<meta name="description" content="Astrology and tarot readings with Amelia Passer — 30 and 60 minute astrology consultations, electional astrology, Saturn return check-ups, and tarot." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../assets/styles.css" />
 <style>
+  /* Per-service grid (5 services) */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: var(--bg-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    padding: 36px 28px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  .service-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .service-card--featured {
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.08), var(--bg-1));
+    border-color: rgba(212, 175, 55, 0.4);
+    position: relative;
+  }
+  .service-card--featured::before {
+    content: "Signature";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--bg-0);
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .service-symbol { font-size: 2rem; color: var(--gold); margin-bottom: 4px; }
+  .service-name { font-family: var(--font-display); font-size: 1.5rem; margin: 0; line-height: 1.2; }
+  .service-meta {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-2);
+  }
+  .service-price { font-family: var(--font-display); color: var(--gold); font-size: 1.6rem; }
+  .service-desc { color: var(--ink-2); font-size: 0.93rem; flex: 1; }
+  .service-card .btn { align-self: center; margin-top: 12px; }
+
+  .testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  @media (max-width: 720px) { .testimonials { grid-template-columns: 1fr; } }
+  .testimonial {
+    background: var(--bg-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    padding: 36px;
+    position: relative;
+  }
+  .testimonial::before {
+    content: "“";
+    position: absolute;
+    top: 8px;
+    left: 24px;
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.5;
+  }
+  .testimonial p {
+    color: var(--ink-1);
+    font-style: italic;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .testimonial cite {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-style: normal;
+  }
+
   .process {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -33,22 +128,10 @@
     color: var(--gold);
     line-height: 1;
   }
-  .process__step::after {
-    content: "";
-    position: absolute;
-    top: 18px;
-    left: 60px;
-    right: -16px;
-    height: 1px;
-    background: var(--hairline-strong);
-  }
-  .process__step:last-child::after { display: none; }
   .process__step h3 { font-size: 1.2rem; font-family: var(--font-display); margin-bottom: 8px; }
   .process__step p { font-size: 0.95rem; color: var(--ink-2); }
-  .faq__item {
-    border-top: 1px solid var(--hairline);
-    padding: 24px 0;
-  }
+
+  .faq__item { border-top: 1px solid var(--hairline); padding: 24px 0; }
   .faq__item:last-child { border-bottom: 1px solid var(--hairline); }
   .faq__item summary {
     cursor: pointer;
@@ -70,6 +153,26 @@
   }
   .faq__item[open] summary::after { content: "−"; }
   .faq__item p { margin-top: 12px; color: var(--ink-1); }
+
+  .config-note {
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px dashed rgba(212, 175, 55, 0.4);
+    border-radius: var(--r-md);
+    padding: 16px 24px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--ink-2);
+    margin: 0 auto 48px;
+    max-width: 760px;
+    text-align: center;
+  }
+  .config-note strong { color: var(--gold); }
+  .config-note code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--gold-soft);
+  }
 </style>
 </head>
 <body>
@@ -101,67 +204,155 @@
 <section class="hero" style="min-height:auto; padding: 96px 0 48px;">
   <div class="container">
     <div class="text-center" style="max-width: 760px; margin: 0 auto;">
-      <span class="eyebrow">Readings</span>
-      <h1>Astrology and tarot,<br/><span class="signature">in the language of the wheel.</span></h1>
+      <span class="eyebrow">Astrology &amp; Tarot Readings</span>
+      <h1>Sit with the symbols.<br/><span class="signature">In their language, find yours.</span></h1>
       <p class="lede">
-        Sit with me for an hour or two and let's look at what's happening
-        for you — by chart, by card, or by both. Sessions are available in
-        person in the Front Range, or by video anywhere.
+        Astrology and tarot readings — natal chart consultations,
+        transit and Saturn return work, electional dates, and tarot. By
+        appointment, in person in the Front Range or by video anywhere.
       </p>
     </div>
   </div>
 </section>
 
-<!-- ============ PRICING / SESSIONS ============ -->
+<!-- ============ SERVICES (5 real ones) ============ -->
 <section class="section">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Sessions</span>
-      <h2>Choose your reading</h2>
+      <span class="eyebrow">Choose your reading</span>
+      <h2>Sessions</h2>
     </div>
 
-    <div class="pricing">
+    <!-- Cal.com setup note (visible until live link is wired):
+         Replace the placeholder username "amelia-cal" below with Amelia's
+         actual cal.com username, and confirm the event-type slugs match
+         what she creates in her Cal.com dashboard. -->
 
-      <div class="pricing__item reveal">
-        <div class="pricing__symbol">✦</div>
-        <h3 class="pricing__name">Tarot Spread</h3>
-        <p class="pricing__price">45 min · $80</p>
-        <p class="pricing__desc">
-          A focused tarot session with the Astro Magician's deck.
-          Bring a question or come open — we'll lay a spread and read it
-          slowly, together.
+    <div class="services">
+
+      <div class="service-card reveal">
+        <div class="service-symbol">✦</div>
+        <h3 class="service-name">Tarot Reading</h3>
+        <p class="service-meta">30 min</p>
+        <p class="service-price">$45</p>
+        <p class="service-desc">
+          A focused tarot session with the Astro Magician's deck. Bring a
+          question or come open — we'll lay a spread and read it slowly,
+          together.
         </p>
-        <a href="#book" class="btn btn--ghost">Book Tarot</a>
+        <button class="btn btn--ghost" data-cal-link="amelia-cal/tarot-reading" data-cal-namespace="ap" data-cal-config='{"layout":"month_view"}'>
+          Book Tarot
+        </button>
       </div>
 
-      <div class="pricing__item pricing__item--featured reveal">
-        <div class="pricing__symbol">☉</div>
-        <h3 class="pricing__name">Natal Chart</h3>
-        <p class="pricing__price">90 min · $160</p>
-        <p class="pricing__desc">
-          A full reading of your birth chart — sect, dignity, the major
-          configurations, and the story they tell. Recording included.
+      <div class="service-card reveal">
+        <div class="service-symbol">☉</div>
+        <h3 class="service-name">30-Minute Astrology Reading</h3>
+        <p class="service-meta">30 min</p>
+        <p class="service-price">$50</p>
+        <p class="service-desc">
+          A focused astrology consultation — best for a single question or
+          a check-in on what's currently happening in the sky for you.
         </p>
-        <a href="#book" class="btn btn--primary">Book Natal</a>
+        <button class="btn btn--ghost" data-cal-link="amelia-cal/astrology-30" data-cal-namespace="ap" data-cal-config='{"layout":"month_view"}'>
+          Book 30-min
+        </button>
       </div>
 
-      <div class="pricing__item reveal">
-        <div class="pricing__symbol">☽</div>
-        <h3 class="pricing__name">Transit + Tarot</h3>
-        <p class="pricing__price">75 min · $130</p>
-        <p class="pricing__desc">
-          A look at your current transits paired with a tarot spread to
-          ground the symbolism — best for navigating a specific decision
-          or season.
+      <div class="service-card service-card--featured reveal">
+        <div class="service-symbol">☽</div>
+        <h3 class="service-name">60-Minute Astrology Reading</h3>
+        <p class="service-meta">1 hr</p>
+        <p class="service-price">$100</p>
+        <p class="service-desc">
+          A full natal chart reading — sect, dignity, the major
+          configurations, and the story they tell. Best for first-time
+          clients and deeper dives.
         </p>
-        <a href="#book" class="btn btn--ghost">Book Transit</a>
+        <button class="btn btn--primary" data-cal-link="amelia-cal/astrology-60" data-cal-namespace="ap" data-cal-config='{"layout":"month_view"}'>
+          Book 60-min
+        </button>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-symbol">♄</div>
+        <h3 class="service-name">Saturn Return Check-up</h3>
+        <p class="service-meta">30 min</p>
+        <p class="service-price">$50</p>
+        <p class="service-desc">
+          For the late-twenties and early-fifties among you. We look at
+          where Saturn is hitting your chart, what it's asking of you, and
+          how to meet it.
+        </p>
+        <button class="btn btn--ghost" data-cal-link="amelia-cal/saturn-return" data-cal-namespace="ap" data-cal-config='{"layout":"month_view"}'>
+          Book Saturn Return
+        </button>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-symbol">⚜</div>
+        <h3 class="service-name">Electional Astrology Date</h3>
+        <p class="service-meta">1 hr</p>
+        <p class="service-price">$150</p>
+        <p class="service-desc">
+          The art of choosing the right moment. I'll find the most
+          favorable date and time for what you're starting — a launch, a
+          ritual, a contract, a journey. The same method I use to time
+          my own paintings.
+        </p>
+        <button class="btn btn--ghost" data-cal-link="amelia-cal/electional-astrology" data-cal-namespace="ap" data-cal-config='{"layout":"month_view"}'>
+          Book Electional
+        </button>
       </div>
 
     </div>
 
-    <p class="text-center muted" style="margin-top: 32px; font-size: 0.92rem;">
+    <p class="text-center muted" style="margin-top: 48px; font-size: 0.92rem;">
       Sliding scale available — please ask. Couples, family, and group rates by inquiry.
     </p>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Testimonials</span>
+      <h2>From past clients.</h2>
+    </div>
+
+    <div class="testimonials">
+      <figure class="testimonial reveal">
+        <p>
+          What I admired most about my time with Amelia was her grace and
+          patience to connect and guide me through my astrology chart.
+          Coming from little to no knowledge about astrology and the
+          planets, Amelia took her time to explain the meaning of every
+          single thing while weaving together threads of my chart that
+          would only make sense coming from a masterful teacher. She is
+          such an artist in the way she communicates and translates such
+          meta terminology to human language. I left our session feeling
+          very open and humbled by our readings. I wish we had more time ;)
+          Thank you graciously.
+        </p>
+        <cite>— Lauren B</cite>
+      </figure>
+
+      <figure class="testimonial reveal">
+        <p>
+          I went to Amelia for an astrology reading and was very impressed
+          with what I received. I've had many readings in the past… but
+          there is something about Amelia's way that leaves me feeling
+          extremely seen and validated in who I am. During our reading,
+          she offered a variety of reflections and ideas that covered
+          various aspects of my life — each one felt like a channeled
+          piece of wisdom that I needed to hear. I left with more clarity
+          in who I am and certainty in the direction of my life. I'm so
+          grateful to her &amp; this beautiful offering she's offering the world!
+        </p>
+        <cite>— Nikki S</cite>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -176,7 +367,7 @@
     <div class="process">
       <div class="process__step reveal">
         <h3>Book a slot</h3>
-        <p>Use the form below or email me. Send your birth date, time, and place if you'd like a chart drawn ahead.</p>
+        <p>Pick a service above and a time that works for you. For astrology, send your birth date, time, and place ahead of time.</p>
       </div>
       <div class="process__step reveal">
         <h3>Settle in</h3>
@@ -188,63 +379,14 @@
       </div>
       <div class="process__step reveal">
         <h3>Carry it forward</h3>
-        <p>You'll leave with notes (or a recording, for natal sessions) and the names of the patterns we found.</p>
+        <p>You'll leave with notes (or a recording, on request) and the names of the patterns we found.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ BOOKING FORM ============ -->
-<section class="section" id="book">
-  <div class="container container--narrow">
-    <div class="section-head reveal">
-      <span class="eyebrow">Reserve</span>
-      <h2>Request a session</h2>
-      <p class="muted">I'll respond within two business days with available times. For natal sessions, please include your birth details.</p>
-    </div>
-
-    <form class="form reveal" data-form="contact" novalidate>
-      <div class="form-row">
-        <div class="field">
-          <label for="b-name">Your name</label>
-          <input type="text" id="b-name" name="name" autocomplete="name" required />
-        </div>
-        <div class="field">
-          <label for="b-email">Email</label>
-          <input type="email" id="b-email" name="email" autocomplete="email" required />
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="field">
-          <label for="b-type">Reading type</label>
-          <select id="b-type" name="subject">
-            <option>Tarot Spread (45 min)</option>
-            <option>Natal Chart (90 min)</option>
-            <option>Transit + Tarot (75 min)</option>
-            <option>Not sure — please advise</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="b-format">Format</label>
-          <select id="b-format" name="format">
-            <option>In person — Front Range, CO</option>
-            <option>Video call</option>
-            <option>Either is fine</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="b-message">Birth details &amp; what's on your mind</label>
-        <textarea id="b-message" name="message" placeholder="Date / time / place of birth, plus anything you'd like me to know going in." required></textarea>
-      </div>
-
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
-        <p class="form-status" role="status" aria-live="polite"></p>
-        <button type="submit" class="btn btn--primary">Request Session <span class="arrow">→</span></button>
-      </div>
-    </form>
+    <p class="text-center muted" style="margin-top: 48px; font-size: 0.92rem;">
+      Bookings close 18 hours before the session starts.
+      Times shown in your local timezone, sessions held in MDT.
+    </p>
   </div>
 </section>
 
@@ -262,20 +404,24 @@
         <p>Yes — I'll work with what you have, and tell you which parts of the reading are time-sensitive (rising sign, house cusps, lunar timing). For a date-only reading I'll often steer toward a noon chart and focus on the planets and their aspects.</p>
       </details>
       <details class="faq__item">
+        <summary>What is electional astrology, and when is it useful?</summary>
+        <p>Electional astrology is the art of choosing the right moment to begin something. I find a favorable date and time for what you're starting — a launch, a ritual, a contract, a wedding date, a project. It's the same method I use to time my own talismanic paintings.</p>
+      </details>
+      <details class="faq__item">
+        <summary>What's a Saturn Return check-up?</summary>
+        <p>Saturn returns to its natal position roughly every 29 years — once around your late twenties, again in your late fifties. It's traditionally a maturation period. The check-up is a 30-minute look at where Saturn is currently hitting your chart, what it's asking of you, and how to meet it well.</p>
+      </details>
+      <details class="faq__item">
         <summary>Is this religious? Do I have to believe in astrology?</summary>
         <p>No, and no. Astrology and tarot are languages — symbol systems for naming what's already happening. You don't have to believe in them for them to be useful, any more than you have to believe in dreams to find meaning in them.</p>
       </details>
       <details class="faq__item">
         <summary>Can I record the session?</summary>
-        <p>Natal sessions include a recording by default. For tarot sessions I'm happy to record on request — just let me know when we start.</p>
+        <p>Yes — just let me know when we start. I'm happy to record on request.</p>
       </details>
       <details class="faq__item">
         <summary>Do you do predictions?</summary>
         <p>I work descriptively more than predictively. I can show you what the symbols are pointing toward and what your timing looks like, but I won't tell you what to do or guarantee outcomes. The future is yours.</p>
-      </details>
-      <details class="faq__item">
-        <summary>What if I'm in a difficult moment?</summary>
-        <p>Many people come for readings during hard times — that's part of what this work is for. I take it seriously. If something we discuss is outside what a reading can hold, I'll say so and point you toward more appropriate support.</p>
       </details>
     </div>
   </div>
@@ -293,7 +439,7 @@
           <span class="brand__name">Amelia <span>Passer</span></span>
         </a>
         <p class="muted" style="font-size:0.9rem; max-width:38ch; margin-top:12px;">
-          Painter, astrologer, and tarot reader based in the Front Range of Colorado.
+          Talismanic oil paintings, the Astro Magician's Tarot, and personal readings. Studio in Rollinsville, Colorado.
         </p>
       </div>
       <div>
@@ -329,6 +475,44 @@
     </div>
   </div>
 </footer>
+
+<!-- Cal.com embed (popup mode triggered by data-cal-link buttons above).
+     To go live: Amelia creates a free Cal.com account, sets her username
+     (replace `amelia-cal` in the data-cal-link attributes throughout this
+     file with her real username), and creates the 5 event types with the
+     slugs already wired in: tarot-reading, astrology-30, astrology-60,
+     saturn-return, electional-astrology. -->
+<script type="text/javascript">
+(function (C, A, L) {
+  let p = function (a, ar) { a.q.push(ar); };
+  let d = C.document;
+  C.Cal = C.Cal || function () {
+    let cal = C.Cal;
+    let ar = arguments;
+    if (!cal.loaded) {
+      cal.ns = {};
+      cal.q = cal.q || [];
+      d.head.appendChild(d.createElement("script")).src = A;
+      cal.loaded = true;
+    }
+    if (ar[0] === L) {
+      const api = function () { p(api, arguments); };
+      const namespace = ar[1];
+      api.q = api.q || [];
+      if (typeof namespace === "string") {
+        cal.ns[namespace] = cal.ns[namespace] || api;
+        p(cal.ns[namespace], ar);
+        p(cal, ["initNamespace", namespace]);
+      } else { p(cal, ar); }
+      return;
+    }
+    p(cal, ar);
+  };
+})(window, "https://app.cal.com/embed/embed.js", "Cal");
+
+Cal("init", "ap", { origin: "https://cal.com" });
+Cal.ns.ap("ui", { hideEventTypeDetails: false, layout: "month_view" });
+</script>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script src="../assets/script.js"></script>
