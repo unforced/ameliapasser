@@ -19,8 +19,21 @@
   <div class="container site-header__inner">
     <a href="../index.html" class="brand">
       <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <radialGradient id="brand-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e8c870" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#e8c870" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#brand-glow)"/>
         <circle cx="32" cy="32" r="14" fill="none" stroke="#d4af37" stroke-width="1.4"/>
         <path d="M22 32a10 10 0 0 0 14 9 12 12 0 1 1 0-18 10 10 0 0 0-14 9z" fill="#d4af37"/>
+        <g stroke="#d4af37" stroke-width="1" stroke-linecap="round">
+          <path d="M32 4v6"/><path d="M32 54v6"/>
+          <path d="M4 32h6"/><path d="M54 32h6"/>
+          <path d="M11 11l4 4"/><path d="M49 49l4 4"/>
+          <path d="M53 11l-4 4"/><path d="M15 49l-4 4"/>
+        </g>
       </svg>
       <span class="brand__name">Amelia <span>Passer</span></span>
     </a>
@@ -279,9 +292,22 @@
       <div>
         <a href="../index.html" class="brand">
           <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
-            <circle cx="32" cy="32" r="14" fill="none" stroke="#d4af37" stroke-width="1.4"/>
-            <path d="M22 32a10 10 0 0 0 14 9 12 12 0 1 1 0-18 10 10 0 0 0-14 9z" fill="#d4af37"/>
-          </svg>
+        <defs>
+          <radialGradient id="brand-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e8c870" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#e8c870" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#brand-glow)"/>
+        <circle cx="32" cy="32" r="14" fill="none" stroke="#d4af37" stroke-width="1.4"/>
+        <path d="M22 32a10 10 0 0 0 14 9 12 12 0 1 1 0-18 10 10 0 0 0-14 9z" fill="#d4af37"/>
+        <g stroke="#d4af37" stroke-width="1" stroke-linecap="round">
+          <path d="M32 4v6"/><path d="M32 54v6"/>
+          <path d="M4 32h6"/><path d="M54 32h6"/>
+          <path d="M11 11l4 4"/><path d="M49 49l4 4"/>
+          <path d="M53 11l-4 4"/><path d="M15 49l-4 4"/>
+        </g>
+      </svg>
           <span class="brand__name">Amelia <span>Passer</span></span>
         </a>
         <p class="muted" style="font-size:0.9rem; max-width:38ch; margin-top:12px;">
