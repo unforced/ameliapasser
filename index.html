@@ -106,9 +106,18 @@
 <section class="section">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">The Seven Basics · Planetary Talisman Series · 2021–2023</span>
-      <h2>Paintings under planetary timing.</h2>
-      <p class="muted">Seven oils on canvas, one for each of the classical bodies — each commenced under its planet's astrological election and only worked on its planetary day, with sympathetic pigment and metal leaf.</p>
+      <span class="eyebrow">Planetary Talismanic Series · 2021–2023</span>
+      <h2>The Seven Basics.</h2>
+      <p class="muted">
+        The Seven Basics consists of seven large-scale talismanic paintings,
+        each dedicated to one of the classical planets — Moon, Mercury,
+        Venus, Sun, Mars, Jupiter, and Saturn. Drawing inspiration from
+        the alchemical teachings of Paracelsus, each painting follows a
+        ritualized process adapted from spagyric preparation into planetary
+        form. Each work was begun under a precise astrological election,
+        painted only on a planetary day corresponding to its ruling body,
+        and activated through ceremonial invocations, incense, and sound.
+      </p>
     </div>
 
     <div class="grid grid--3">
@@ -176,7 +185,7 @@
         </p>
         <div class="hero__cta">
           <a href="pages/tarot.html" class="btn btn--primary">Explore the Deck <span class="arrow">→</span></a>
-          <a href="pages/shop.html" class="btn btn--ghost">Order — $55</a>
+          <a href="https://amelia-passer-art.myshopify.com/products/limited-edition-astro-magicians-tarot-deck" target="_blank" rel="noopener" class="btn btn--ghost">Order — $55</a>
         </div>
       </div>
     </div>
@@ -286,11 +295,28 @@
           readings. Studio in Boulder, Colorado.
         </p>
 
-        <form class="form" data-form="subscribe" style="margin-top:24px; max-width:380px;">
+        <!--
+          MailerLite subscribe form
+          =========================
+          Amelia uses MailerLite for newsletter. To wire this up live:
+          1. In MailerLite dashboard → Forms → Embedded forms → create
+             a "Stay in the loop" form (or similar)
+          2. Click "Embed code" → copy the form action URL (looks like:
+             https://assets.mailerlite.com/jsonp/{ACCOUNT_ID}/forms/{FORM_ID}/subscribe)
+          3. Paste that URL into the action attribute below, replacing
+             MAILERLITE-ACCOUNT-ID and MAILERLITE-FORM-ID
+          4. Optional: paste the full embed snippet from MailerLite for a
+             richer styled form (replaces this simple form entirely)
+        -->
+        <form class="form"
+              data-form="subscribe"
+              action="https://assets.mailerlite.com/jsonp/MAILERLITE-ACCOUNT-ID/forms/MAILERLITE-FORM-ID/subscribe"
+              method="post"
+              style="margin-top:24px; max-width:380px;">
           <div class="field">
             <label for="sub-email">Stay in the loop</label>
             <div style="display:flex; gap:8px;">
-              <input type="email" id="sub-email" name="email" placeholder="you@email.com" required />
+              <input type="email" id="sub-email" name="fields[email]" placeholder="you@email.com" required />
               <button type="submit" class="btn btn--primary" style="padding:10px 18px;">Subscribe</button>
             </div>
           </div>

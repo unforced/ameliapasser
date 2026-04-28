@@ -100,21 +100,37 @@
     });
   }
 
-  // -------- Subscribe form (placeholder) --------
+  // -------- Subscribe form — MailerLite (with placeholder fallback) --------
   const subForm = document.querySelector('[data-form="subscribe"]');
   if (subForm) {
     const status = subForm.querySelector('.form-status');
-    subForm.addEventListener('submit', e => {
+    subForm.addEventListener('submit', async e => {
       e.preventDefault();
-      const email = (new FormData(subForm).get('email') || '').toString().trim();
+      const fd = new FormData(subForm);
+      const email = (fd.get('fields[email]') || fd.get('email') || '').toString().trim();
       if (!/.+@.+\..+/.test(email)) {
         status.textContent = 'Please enter a valid email.';
         status.style.color = 'var(--rose)';
         return;
       }
-      status.textContent = 'Thank you — you\'ll hear from the studio soon.';
-      status.style.color = 'var(--gold)';
-      subForm.reset();
+      const action = subForm.getAttribute('action') || '';
+      // If the real MailerLite endpoint hasn't been wired yet, just acknowledge.
+      if (!action || action.includes('MAILERLITE-')) {
+        status.textContent = 'Thank you — you\'ll hear from the studio soon.';
+        status.style.color = 'var(--gold)';
+        subForm.reset();
+        return;
+      }
+      // Real MailerLite endpoint — submit via fetch, no-cors to avoid CORS preflight.
+      try {
+        await fetch(action, { method: 'POST', mode: 'no-cors', body: fd });
+        status.textContent = 'You\'re on the list — confirmation sent.';
+        status.style.color = 'var(--gold)';
+        subForm.reset();
+      } catch (err) {
+        status.textContent = 'Hmm — something went wrong. Try again, or email directly.';
+        status.style.color = 'var(--rose)';
+      }
     });
   }
 
