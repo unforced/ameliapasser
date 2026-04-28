@@ -396,24 +396,31 @@ em.gold, .gold { color: var(--gold); font-style: normal; }
   background: linear-gradient(180deg, transparent 60%, rgba(10, 8, 20, 0.4));
 }
 
-/* Natural-aspect variant — for portraits where we don't want to force-crop. */
-.hero__visual--natural,
-.feature__media--natural {
+/* Natural-aspect variant — for portraits where we don't want to force-crop.
+   Uses double-class selectors to win specificity against the base
+   .feature__media rules defined later in the file. */
+.hero__visual.hero__visual--natural,
+.feature__media.feature__media--natural {
   aspect-ratio: auto;
+  height: auto;
   border-radius: var(--r-lg);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
   display: block;
+  background: transparent;
 }
-.hero__visual--natural img,
-.feature__media--natural img {
+.hero__visual.hero__visual--natural img,
+.feature__media.feature__media--natural img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
 }
-.hero__visual--natural { max-width: 460px; margin-left: auto; }
-@media (max-width: 880px) { .hero__visual--natural { max-width: 100%; margin: 0 auto; } }
+.hero__visual.hero__visual--natural { max-width: 460px; margin-left: auto; }
+@media (max-width: 880px) {
+  .hero__visual.hero__visual--natural { max-width: 100%; margin: 0 auto; }
+  .feature__media.feature__media--natural { max-width: 100%; aspect-ratio: auto; }
+}
 @media (max-width: 880px) {
   .hero__inner { grid-template-columns: 1fr; gap: 48px; }
   .hero { min-height: auto; padding: 48px 0; }
@@ -687,11 +694,22 @@ body.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
 }
 .lightbox__close:hover { border-color: var(--gold); color: var(--gold); }
 .lightbox__content {
-  max-width: 80vw;
-  max-height: 80vh;
+  max-width: 90vw;
+  max-height: 85vh;
   border-radius: var(--r-lg);
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox__content img,
+.lightbox__content svg {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  display: block;
 }
 .lightbox__caption {
   margin-top: 16px;
