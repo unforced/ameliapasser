@@ -773,6 +773,22 @@ body.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
 }
 .arcana-grid img { width: 100%; height: auto; display: block; }
 
+/* ---------- Embedded video ---------- */
+.video-frame {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: #000;
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+}
+.video-frame video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ---------- Events page ---------- */
 .event-hero {
   position: relative;
