@@ -52,9 +52,17 @@
     document.querySelectorAll('[data-lightbox]').forEach(trigger => {
       trigger.addEventListener('click', e => {
         e.preventDefault();
-        const inner = trigger.querySelector('.card__media');
-        if (!inner) return;
+        // Source for the lightbox content: prefer the trigger's inner .card__media
+        // (cards), otherwise use the trigger's own innerHTML (feature blocks).
+        const inner = trigger.querySelector('.card__media') || trigger;
         content.innerHTML = inner.innerHTML;
+        // If the trigger declares a higher-res variant, swap the cloned <img>'s
+        // src to it so zooming-in shows full detail.
+        const largeSrc = trigger.dataset.lightboxSrc;
+        if (largeSrc) {
+          const img = content.querySelector('img');
+          if (img) img.src = largeSrc;
+        }
         caption.textContent = trigger.dataset.caption || '';
         lightbox.classList.add('is-open');
         document.body.style.overflow = 'hidden';
