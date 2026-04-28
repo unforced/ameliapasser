@@ -169,6 +169,7 @@
       <a href="tarot.html">Tarot Deck</a>
       <a href="readings.html">Readings</a>
       <a href="shop.html">Shop</a>
+      <a href="events.html">Events</a>
       <a href="about.html">About</a>
     </nav>
   </div>
@@ -189,20 +190,17 @@
 </section>
 
 <!--
-  Stripe Payment Links setup
-  ==========================
-  Each "Order" / "Inquire" button below has its href set to a placeholder
-  Stripe checkout URL. To go live:
+  Shop checkout setup
+  ===================
+  Amelia has set up a Shopify store. Each "Order →" / "Inquire →" link
+  below currently points to her existing Wix product pages (which still
+  work for checkout).
 
-  1. Sign in to Amelia's Stripe dashboard (dashboard.stripe.com).
-  2. Products → + Add Product → fill in name, price, optional images.
-     Toggle "Payment Link" → save.
-  3. Copy the resulting URL (looks like https://buy.stripe.com/abc123…).
-  4. Replace the matching `STRIPE-{slug}` placeholder href below.
-  5. For Out-of-Stock items, leave the placeholder or point to the
-     contact form.
+  When her Shopify URLs are ready, swap each href below with the matching
+  Shopify product URL. Pattern:
+    https://amelias-shopify-store.com/products/{slug}
 
-  ~5 minutes per product. No code changes after that.
+  Leave Out-of-Stock items pointing to the contact form (../index.html#contact).
 -->
 
 <section class="section" style="padding-top: 32px;">
@@ -235,7 +233,7 @@
             <div class="shop-item__pricing">
               <span class="shop-item__price">$55.00</span>
             </div>
-            <a href="https://buy.stripe.com/STRIPE-tarot-deck" class="shop-item__action">Order →</a>
+            <a href="https://www.ameliapasser.com/product-page/pre-order-limited-edition-astro-magician-s-tarot-deck" class="shop-item__action">Order →</a>
           </div>
         </div>
       </article>
@@ -260,7 +258,7 @@
               <span class="shop-item__price-original">$10,000.00</span>
               <span class="shop-item__price">$7,000.00</span>
             </div>
-            <a href="https://buy.stripe.com/STRIPE-birth-of-venus" class="shop-item__action">Inquire →</a>
+            <a href="https://www.ameliapasser.com/product-page/birth-of-venus-original-painting" class="shop-item__action">Inquire →</a>
           </div>
         </div>
       </article>
@@ -284,7 +282,7 @@
               <span class="shop-item__price-original">$10,000.00</span>
               <span class="shop-item__price">$7,000.00</span>
             </div>
-            <a href="https://buy.stripe.com/STRIPE-dreams-of-the-jewel" class="shop-item__action">Inquire →</a>
+            <a href="https://www.ameliapasser.com/product-page/dreams-of-the-jewel-original-painting" class="shop-item__action">Inquire →</a>
           </div>
         </div>
       </article>
@@ -309,7 +307,7 @@
               <span class="shop-item__price-original">$8,000.00</span>
               <span class="shop-item__price">$5,600.00</span>
             </div>
-            <a href="https://buy.stripe.com/STRIPE-durga-ma-in-leo" class="shop-item__action">Inquire →</a>
+            <a href="https://www.ameliapasser.com/product-page/durga-ma-in-leo-original-painting" class="shop-item__action">Inquire →</a>
           </div>
         </div>
       </article>
@@ -333,7 +331,7 @@
             <div class="shop-item__pricing">
               <span class="shop-item__price">$3,500.00</span>
             </div>
-            <a href="https://buy.stripe.com/STRIPE-ladys-mantle" class="shop-item__action">Inquire →</a>
+            <a href="https://www.ameliapasser.com/product-page/lady-s-mantle-original-painting" class="shop-item__action">Inquire →</a>
           </div>
         </div>
       </article>
@@ -358,7 +356,7 @@
               <span class="shop-item__price-original">$1,200.00</span>
               <span class="shop-item__price">$600.00</span>
             </div>
-            <a href="https://buy.stripe.com/STRIPE-the-protectress" class="shop-item__action">Order →</a>
+            <a href="https://www.ameliapasser.com/product-page/the-protectress-original-painting" class="shop-item__action">Order →</a>
           </div>
         </div>
       </article>
@@ -382,7 +380,7 @@
               <span class="shop-item__price-original">$300.00</span>
               <span class="shop-item__price">$150.00</span>
             </div>
-            <a href="https://buy.stripe.com/STRIPE-hemlock" class="shop-item__action">Order →</a>
+            <a href="https://www.ameliapasser.com/product-page/hemlock-original-drawing" class="shop-item__action">Order →</a>
           </div>
         </div>
       </article>
@@ -528,7 +526,7 @@
           <span class="brand__name">Amelia <span>Passer</span></span>
         </a>
         <p class="muted" style="font-size:0.9rem; max-width:38ch; margin-top:12px;">
-          Talismanic oil paintings, the Astro Magician's Tarot, and personal readings. Studio in Rollinsville, Colorado.
+          Talismanic oil paintings, the Astro Magician's Tarot, and personal readings. Studio in Boulder, Colorado.
         </p>
       </div>
       <div>
