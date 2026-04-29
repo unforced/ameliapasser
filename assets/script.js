@@ -83,31 +83,6 @@
     });
   }
 
-  // -------- Contact form (no backend — client-side acknowledgement) --------
-  const contactForm = document.querySelector('[data-form="contact"]');
-  if (contactForm) {
-    const status = contactForm.querySelector('.form-status');
-    contactForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const data = new FormData(contactForm);
-      const name = (data.get('name') || '').toString().trim();
-      const email = (data.get('email') || '').toString().trim();
-      const message = (data.get('message') || '').toString().trim();
-      if (!name || !email || !message) {
-        status.textContent = 'Please fill in name, email, and message.';
-        status.style.color = 'var(--rose)';
-        return;
-      }
-      // Open user's email client with prefilled message — works without a backend.
-      const subject = encodeURIComponent((data.get('subject') || 'Hello from your site').toString());
-      const body = encodeURIComponent(`From: ${name} <${email}>\n\n${message}`);
-      window.location.href = `mailto:ameliapasser@gmail.com?subject=${subject}&body=${body}`;
-      status.textContent = 'Opening your email — thanks for reaching out.';
-      status.style.color = 'var(--gold)';
-      contactForm.reset();
-    });
-  }
-
   // -------- Subscribe form — MailerLite (with placeholder fallback) --------
   const subForm = document.querySelector('[data-form="subscribe"]');
   if (subForm) {
